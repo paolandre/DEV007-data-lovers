@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container_titulo">
+      <img class="logoPokemon" src="Pokémon_logo.png" alt="Logo Pokémon">
+    </div>
+  </header>
+  <section>
+    <p> Welcome to this page, where you can find information on 251 different Pokémon along with some basic details. You
+      have the option to filter them by their type and sort them in ascending or descending order based on the
+      probability of capturing them. Additionally, you can easily calculate the average weight and height of each
+      Pokémon on this page.</p>
+  </section>
+
+  <div class="container_botones">
+    <button>Filter</button>
+    <button>Order</button>
+    <button>Calculate</button>
+  </div>
+
+  <div id="contenedor"></div>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>

@@ -1,0 +1,59 @@
+body {
+    background-color: #1A2234;
+    font-family: sans-serif;
+
+}
+
+.container_titulo {
+    margin: 100px;
+    text-align: center;
+}
+
+.logoPokemon {
+    width: 266px;
+    height: 93px;
+    text-align: center;
+    margin-top: -50px;
+}
+
+p {
+    margin-top: -60px;
+    padding-left: 70px;
+    padding-right: 70px;
+    color: white;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.container_botones {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+
+}
+
+button {
+    background-color: #FFCB05;
+    color: #1A2234;
+    border: hidden;
+    border-radius: 5px;
+    padding: 5px 30px;
+    font-weight: bold;
+    height: 32px;
+    width: 170px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #006FB5;
+}
+
+.contenedor_pokemones {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+}
