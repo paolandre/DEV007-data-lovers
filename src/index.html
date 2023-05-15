@@ -6,7 +6,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <header>
+      <div class="container_titulo">
+        <img class="logoPokemon" src="Logo de pokemon.png" alt="Logo Pokémon">
+      </div>
+    </header>
+    <section>
+      <p class="principal_parrafo"> Welcome to this page, where you can find information on 251 different Pokémon along with some basic details. You
+        have the option to filter them by their type and sort them in ascending or descending order based on the
+        probability of capturing them. Additionally, you can easily calculate the average weight and height of each
+        Pokémon on this page.</p>
+    </section>
+  
+    <div class="container_botones">
+      <button>Filter</button>
+      <button>Order</button>
+      <button>Calculate</button>
+    </div>
+  
+    <div id="contenedor" class="contenedor_pokemones"></div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
