@@ -17,11 +17,11 @@ const pokemones = data.pokemon;
 
 //creando el filtro por cada tipo de poder.
 // debemos crear en el HTML una lista para que se vean los tipos de poder
-const grass = pokemones.filter(pokemon => {
+export const grass = pokemones.filter(pokemon => {
 return pokemon.type === 'grass'
 })
 
-const poison = pokemones.filter(pokemon => {
+export const poison = pokemones.filter(pokemon => {
 return pokemon.type === 'poison'
 })
 
