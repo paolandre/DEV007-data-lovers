@@ -40,9 +40,9 @@ botonFiltrar.addEventListener("click", () => {
   });
 });
 
-const contenedorBotones = document.getElementById("container_botones");
+//const contenedorBotones = document.getElementById("container_botones");
 //contenedorBotones.style.display = "none";
-const principalParrafo = document.getElementById("principal_parrafo");
+//const principalParrafo = document.getElementById("principal_parrafo");
 //principalParrafo.style.display = "none";
 
 //const filtroPokemones = data.filtroPokemones;
