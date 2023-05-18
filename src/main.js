@@ -2,8 +2,8 @@ import { example } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
+//Primera historia de usuario
 const pokemones = data.pokemon;
-
 const contenedor = document.getElementById('contenedor');
 
 pokemones.forEach(pokemon => {
@@ -17,8 +17,6 @@ pokemones.forEach(pokemon => {
 
   const card = document.createElement('div');
   card.className = 'pokemon-card';
-
-
   card.innerHTML = `
     <img src="${img}" alt="${name}">
     <h3>${name}</h3>
@@ -32,3 +30,4 @@ pokemones.forEach(pokemon => {
 
   contenedor.appendChild(card);
 });
+
