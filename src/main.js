@@ -1,17 +1,19 @@
-//import { filtroPokemones } from "./data.js";
-
+import { filtroPokemones } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
-//Primera historia de usuario
+//Declaramos variables 
 const pokemones = data.pokemon;
-const contenedor = document.getElementById("contenedor");
+const contenedorPokemones = document.getElementById("contenedor_pokemones");
+const contenedorBotonesPrincipal = document.getElementById("container_botones_principal");
+const principalParrafo = document.getElementById("principal_parrafo");
 
+//Historia de usuario 1
 pokemones.forEach((pokemon) => {
   const img = pokemon.img;
   const name = pokemon.name;
   const height = pokemon.size["height"];
   const weight = pokemon.size["weight"];
-  const type = pokemon.type;
+  const type = pokemon.type.join(", "); //.join funciona para poner elementos entre dos elementos del array
   const baseCaptureRate = pokemon.encounter["base-capture-rate"];
 
   const card = document.createElement("div");
@@ -25,32 +27,65 @@ pokemones.forEach((pokemon) => {
         <p>Base Capture Rate: ${baseCaptureRate}</p>
         <p>Type: ${type}</p>
     </div>
-  `;
-
-  contenedor.appendChild(card);
+    `;    
+    contenedorPokemones.appendChild(card);
 });
 
 //Historia usuario 2
-const botonFiltrar = document.getElementById("boton-filtrar");
+const tiposPokemon = document.getElementById("lista-desplegable-filtrar");
 
-botonFiltrar.addEventListener("click", () => {
-  contenedor.innerHTML = "";
-  pokemones.forEach((pokemon) => {
-    contenedor.innerHTML += `<p>${pokemon.type}</p>`;
-  });
-});
+const pokemonesGrass = filtroPokemones(data, "grass");
+console.log(pokemonesGrass);
 
-//const contenedorBotones = document.getElementById("container_botones");
-//contenedorBotones.style.display = "none";
-//const principalParrafo = document.getElementById("principal_parrafo");
-//principalParrafo.style.display = "none";
 
-//const filtroPokemones = data.filtroPokemones;
-//contenedor.innerHTML += `<p>${filtroPokemones}</p>`;
 
-//¿¿¿¿aqui iria la lista desplegable????
-//<select name="filtro-type">
-//<option value="value1">grass</option>
-//<option value="value2">poison</option>
-//<option value="value3">fire</option>
-//</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Yo trabajo hasta aquí
+
+
+
