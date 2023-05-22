@@ -1,37 +1,36 @@
-// estas funciones son de ejemplo
-
 import data from "./data/pokemon/pokemon.js";
+
 export const filtroPokemones = (data, propiedad) => {
-  return data.filter((pokemon) => {
-    return pokemon.type === propiedad;
+  let result = data.pokemon.filter((pokemon) => {
+    console.log(pokemon.type)
+   return pokemon.type.includes(propiedad) == true;
   });
+  console.log(result)
+  return result
 };
 
-console.log(filtroPokemones(pokemones, "grass"));
 
-export const anotherExample = () => {
-  return "OMG";
-};
 
-const pokemones = data.pokemon;
 
-//creando el filtro por cada tipo de poder.
-// debemos crear en el HTML una lista para que se vean los tipos de poder
-export const grass = pokemones.filter((pokemon) => {
-  return pokemon.type === "grass";
-});
 
-export const poison = pokemones.filter((pokemon) => {
-  return pokemon.type === "poison";
-});
 
-//funciones data.js -> creando funnciones que se encargan de manipular la data
 
-//function filtrar(data, propiedad) {
-//return data.filter(pokemon => {
-//return pokemon.type === propiedad
-// })
-//}
-//console.log(filtrar(pokemones, 'type'))
 
-//pokemon.type === propiedad - va a pasar por cada type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Yo trabajo hasta aquí 
+//Historia de usuario 3

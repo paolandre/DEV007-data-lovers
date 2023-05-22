@@ -1,30 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <header>
-      <div class="container_titulo">
-        <img class="logoPokemon" src="Logo de pokemon.png" alt="Logo Pokémon">
-      </div>
-    </header>
-    <section>
-      <p class="principal_parrafo" id="principal_parrafo"> Welcome to this page, where you can find information on 251 different Pokémon along with some basic details. You
-        have the option to filter them by their type and sort them in ascending or descending order based on the
-        probability of capturing them. Additionally, you can easily calculate the average weight and height of each
-        Pokémon on this page.</p>
-    </section>
-  
-    <div class="container_botones" id="container_botones">
-      <button id="boton-filtrar">Filter</button>
-      <button>Order</button>
-      <button>Calculate</button>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Titulo -->
+  <header>
+    <div class="container_titulo">
+      <img class="logoPokemon" src="Logo de pokemon.png" alt="Logo Pokémon">
     </div>
-  
-    <div id="contenedor" class="contenedor_pokemones"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+  </header>
+
+  <!-- Encabezado principal -->
+  <section>
+    <p class="principal_parrafo" id="principal_parrafo"> Welcome to this page, where you can find information on 251
+      different Pokémon along with some basic details. You
+      have the option to filter them by their type and sort them in ascending or descending order based on the
+      probability of capturing them. Additionally, you can easily calculate the average weight and height of each
+      Pokémon on this page.</p>
+  </section>
+
+  <!-- Contenedor de botones -->
+  <div class="container_botones_principal" id="container_botones_principal">
+
+    <!-- Historia de usuario 2 (filtro)-->
+    <select id="lista-desplegable-filtrar" style="display: block;" class="boton">
+      <option>Filter</option>
+      <option value="normal">Normal</option>
+      <option>Fire</option>
+      <option>Water</option>
+      <option>Grass</option>
+      <option>Electric</option>
+      <option>Ice</option>
+      <option>Fighting</option>
+      <option>Poison</option>
+      <option>Ground</option>
+      <option>Flying</option>
+      <option>Psychic</option>
+      <option>Bug</option>
+      <option>Rock</option>
+      <option>Ghost</option>
+      <option>Dragon</option>
+      <option>Dark</option>
+      <option>Steel</option>
+      <option>Fairy</option>
+    </select>
+
+    <button>Order</button>
+    <button>Calculate</button>
+  </div>
+
+    <!-- Historia de usuario 1 (contenedor de pokemones) -->
+    <div id="contenedor_pokemones" class="contenedor_pokemones"></div>
+
+  </div>
+
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
