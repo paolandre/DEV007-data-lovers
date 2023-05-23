@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 
@@ -51,7 +50,6 @@
 
 
 
-=======
 import { filtroPokemones, tarjetaPokemon } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
@@ -100,7 +98,6 @@ valoresLista.addEventListener("change", () => {
     });
   }
 });
->>>>>>> bb916dd90b25a8f7689ff2957cca7d4ca4e86a33
 
 // Refrescar la página al hacer clic en la imagen del logo
 logoPokemon.addEventListener("click", () => {
@@ -108,7 +105,6 @@ logoPokemon.addEventListener("click", () => {
   location.reload(); //-reload se usa para recargar la página
 });
 
-<<<<<<< HEAD
 
 
 
@@ -236,6 +232,4 @@ ordenarValores.addEventListener("change", () => {
 
 
 
-=======
 //Yo trabajo hasta aquí
->>>>>>> bb916dd90b25a8f7689ff2957cca7d4ca4e86a33

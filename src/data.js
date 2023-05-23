@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 
 
 
@@ -143,7 +142,6 @@ export const ordenarBaseCaptureRate = (data, propiedad, order) => { //por qué l
 //})
 
 //return a - b; -> para indicar que debe ordenar numbers
-=======
 // Historia de usuario 1 : Creación de la función de la tarjeta de pokemones para reusarla después
 export const tarjetaPokemon = (pokemon) => {
   //se extraen las propiedades del objeto pokemon con la función flecha
@@ -187,4 +185,3 @@ export const filtroPokemones = (data, propiedad) => {
 
 //Yo trabajo hasta aquí
 //Historia de usuario 3
->>>>>>> bb916dd90b25a8f7689ff2957cca7d4ca4e86a33
