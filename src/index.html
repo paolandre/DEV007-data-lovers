@@ -1,81 +1,157 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <header>
-      <div class="container_titulo">
-        <img class="logoPokemon" src="Logo de pokemon.png" alt="Logo Pokémon">
-      </div>
-    </header>
-    <section>
-      <p class="principal_parrafo" id="principal_parrafo"> Welcome to this page, where you can find information on 251 different Pokémon along with some basic details. You
-        have the option to filter them by their type and sort them in ascending or descending order based on the
-        probability of capturing them. Additionally, you can easily calculate the average weight and height of each
-        Pokémon on this page.</p>
-    </section>
 
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <!-- <nav> 
-      <a href>Order</a>
-        <ul>
-          <li><a href="#">From lower to higher</a></li>
-          <li><a href="#">From higher to lower</a></li>
-        </ul>
-    </nav>
-    -->
-  
-    <div class="contenedor_botones" id="contenedor_botones">
-      <button id="boton-filtrar">Filter</button>
-      <button id="boton-ordenar">Order</button>
-      <button>Calculate</button>
+<body>
+  <!-- Titulo -->
+  <header>
+    <div class="container_titulo">
+      <img class="logoPokemon" src="Logo de pokemon.png" alt="Logo Pokémon">
     </div>
-  
+  </header>
+
+  <!-- Encabezado principal -->
+  <section>
+    <p class="principal_parrafo" id="principal_parrafo"> Welcome to this page, where you can find information on 251
+      different Pokémon along with some basic details. You
+      have the option to filter them by their type and sort them in ascending or descending order based on the
+      probability of capturing them. Additionally, you can easily calculate the average weight and height of each
+      Pokémon on this page.</p>
+  </section>
+
+  <!-- Contenedor de botones -->
+  <div class="container_botones_principal">
+
+    <!-- Historia de usuario 2 (filtro)-->
+    <select id="lista-desplegable-filtrar" style="display: block;" class="boton">
+      <option>Filter</option>
+      <option value="normal">Normal</option>
+      <option value="fire">Fire</option>
+      <option value="water">Water</option>
+      <option value="grass">Grass</option>
+      <option value="electric">Electric</option>
+      <option value="ice">Ice</option>
+      <option value="fighting">Fighting</option>
+      <option value="poison">Poison</option>
+      <option value="ground">Ground</option>
+      <option value="flying">Flying</option>
+      <option value="psychic">Psychic</option>
+      <option value="bug">Bug</option>
+      <option value="rock">Rock</option>
+      <option value="ghost">Ghost</option>
+      <option value="dragon">Dragon</option>
+      <option value="dark">Dark</option>
+      <option value="steel">Steel</option>
+      <option value="fairy">Fairy</option>
+    </select>
+
+    <!-- Historia de usuario 3 (ordenar) -->
+  <select id="lista-desplegable-ordenar" style="display: block;" class="boton">
+    <option>Order</option>
+    <option value="lower-catch-rate">From lower to higher catch rate</option>
+    <option value="higher-catch-rate">From higher to lower catch rate</option>
+  </select>
+
+    <button>Calculate</button>
+  </div>
+
+    <!-- Historia de usuario 1 (contenedor de pokemones) -->
     <div id="contenedor_pokemones" class="contenedor_pokemones"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+  </div>
+
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
-
-
