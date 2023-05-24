@@ -1,4 +1,4 @@
-import { filtroPokemones, tarjetaPokemon } from "./data.js";
+import { filtroPokemones, tarjetaPokemon, ordenarPokemones } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 //Declaramos variables que vamos a usar
@@ -18,11 +18,6 @@ pokemones.forEach((pokemon) => {
 });
 
 
-
-
-
-
-
 //Historia usuario 2
 /*const pokemonesGrass = filtroPokemones(data, "grass");
 console.log(pokemonesGrass); esto nos sirve para comprobar que funciona el filtro*/
@@ -34,7 +29,7 @@ valoresLista.addEventListener("change", () => {
   //cuando se hace un cambio en la lista-desplegable-filtrar se ejecuta la función flecha
   const valorSeleccionado = valoresLista.value; // se obtiene el valor seleccionado .value
 
-  if (valorSeleccionado == "show-all") {
+  if (valorSeleccionado === "show-all") {
     // si se selecciona el valor de show-all se ejecuta el metodo de forEach para mostrar todas las tarjetas con todos los pokemones
     contenedorPokemones.innerHTML = "";
     pokemones.forEach((pokemon) => {
@@ -54,116 +49,32 @@ valoresLista.addEventListener("change", () => {
 });
 
 
-
-
-
-
-
-
-
 //Historia de usuario 3
 
-//cómo hago para conectar la función con el evento del DOM ?
+//cómo hago para conectar esto con la función?
 const ordenarValores = document.getElementById("lista-desplegable-ordenar");
 ordenarValores.addEventListener("change", () => {
   const valoresOrdenados = ordenarValores.value; //obteniendo el valor seleccionado .value
+  const pokemonesOrdenados = ordenarPokemones(["base-capture-rate"], valoresOrdenados);
 
   if (valoresOrdenados === "lower-catch-rate") {
     contenedorPokemones.innerHTML = "";
-    pokemones.forEach((pokemon) => {
+    pokemonesOrdenados.forEach((pokemon) => {
       const card = tarjetaPokemon(pokemon);
       contenedorPokemones.appendChild(card);
     });
   }
   else if (valoresOrdenados === "higher-catch-rate") {
     contenedorPokemones.innerHTML = "";
-    pokemones.forEach((pokemon) => {
+    pokemonesOrdenados.forEach((pokemon) => {
       const card = tarjetaPokemon(pokemon);
       contenedorPokemones.appendChild(card);
     });
   }
 });
 
-
+//tengo que importar la función ordenarPokemones de data.js
 //ordenarPokemones => nombre de la función
-
-
-
-
-//BOTON ORDENAR A-Z(clonar movies para usar esa constant y ordenarla)
-const newMovies = data.films
-const typeOrder= document.getElementById("typeOrder");
-typeOrder.addEventListener("change", () => {
-  const selectOrder= typeOrder.value;
-  const ordenarPeliculas= orderAz(newMovies,selectOrder)
-  console.log(selectOrder);
-  console.log(ordenarPeliculas);
-  contenedor.innerHTML="",
-  ordenarPeliculas.forEach((order)=>{
-    contenedor.innerHTML +=`<section> <br><img src="${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
-  })
-});
-
-
-
-
-export const orderAz= (data, respuestaUsuario) => {
-  const orderMovies= data.sort((a, b)=> {
-    if (a.title>b.title){
-      return 1;
-    }if (a.title<b.title){
-      return -1;
-    } 
-  });
-  if (respuestaUsuario==="A-Z"){
-    return orderMovies;
-  }
-  else if(respuestaUsuario==="Z-A"){
-    return orderMovies.reverse();
-  }};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Refrescar la página al hacer clic en la imagen del logo
@@ -177,3 +88,5 @@ logoPokemon.addEventListener("click", () => {
 //TESTING
 // function init (){
 //export init;
+
+
