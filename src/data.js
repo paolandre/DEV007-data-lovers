@@ -42,30 +42,25 @@ export const filtroPokemones = (data, propiedad) => {
 };
 
 //Historia de usuario 3 
-export const ordenarPokemones = (sortOrder) => {
-  //sort order, el parametro que debe recibir
-  //ordenar de mayor a menor probabilidad de captura con el método sort y haciendo una comparación
-  data.pokemon.encounter["base-capture-rate"].sort(function (a, b) { //por qué en esta línea nada va declarado?
-    const lowerCatchRate = a.encounter["base-capture-rate"](); //declarando los valores que quiero utilizar para la función
-    const higherCatchRate = b.encounter["base-capture-rate"]();
+export const ordenarPokemones = (sortOrder) => { //sort order, el parametro que debe recibir
+  data.pokemon.sort(function (a, b) { //ordenar y haciendo una comparación
+    const lowerCatchRate = parseFloat(a.encounter["base-capture-rate"]); //declarando los valores que quiero utilizar para la función
+    const higherCatchRate = parseFloat(b.encounter["base-capture-rate"]);
     if (sortOrder === "lower-catch-rate") {
-      //filtro ascendente
-      if (lowerCatchRate < higherCatchRate)
-        //si se selecciona de menor a mayor
+      if (lowerCatchRate < higherCatchRate) //filtro ascendente - si se selecciona de menor a mayor
         return -1; // la función declarada devuelve
-      if (lowerCatchRate > higherCatchRate) return 1;
+      if (lowerCatchRate > higherCatchRate) 
+        return 1;
     } else if (sortOrder === "higher-catch-rate") {
-      //filtro descendente
-      if (lowerCatchRate > higherCatchRate)
-        //si se selecciona de mayor a menor
+      if (lowerCatchRate > higherCatchRate) //filtro descendente - si se selecciona de mayor a menor
         return -1;
-      if (lowerCatchRate < higherCatchRate) return 1;
+      if (lowerCatchRate < higherCatchRate) 
+        return 1;
     }
     return 0;
   });
-  console.log(ordenarPokemones);
+  console.log(data.pokemon);
 };
-//ordenarPokemones(); //llamando la función
 
 
 // ------------------------------------- Apuntes ----------------------------------------

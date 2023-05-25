@@ -55,18 +55,11 @@ valoresLista.addEventListener("change", () => {
 const ordenarValores = document.getElementById("lista-desplegable-ordenar");
 ordenarValores.addEventListener("change", () => {
   const valoresOrdenados = ordenarValores.value; //obteniendo el valor seleccionado .value
-  const pokemonesOrdenados = ordenarPokemones(["base-capture-rate"], valoresOrdenados);
+  ordenarPokemones(valoresOrdenados); //llamada a la función ordenarPokemones
 
-  if (valoresOrdenados === "lower-catch-rate") {
+  if (valoresOrdenados === "lower-catch-rate" || valoresOrdenados === "higher-catch-rate") {
     contenedorPokemones.innerHTML = "";
-    pokemonesOrdenados.forEach((pokemon) => {
-      const card = tarjetaPokemon(pokemon);
-      contenedorPokemones.appendChild(card);
-    });
-  }
-  else if (valoresOrdenados === "higher-catch-rate") {
-    contenedorPokemones.innerHTML = "";
-    pokemonesOrdenados.forEach((pokemon) => {
+    data.pokemon.forEach((pokemon) => { //recorriendo el arreglo original data.pokemon 
       const card = tarjetaPokemon(pokemon);
       contenedorPokemones.appendChild(card);
     });
