@@ -1,5 +1,3 @@
-import data from "./data/pokemon/pokemon.js"; //por qué dice que está declarada pero nunca usuada
-
 // Historia de usuario 1 : Creación de la función de la tarjeta de pokemones para reusarla después
 export const tarjetaPokemon = (pokemon) => {
   //se extraen las propiedades del objeto pokemon con la función flecha
@@ -27,6 +25,7 @@ export const tarjetaPokemon = (pokemon) => {
   return card; //Aquí retornamos el elemento de la tarjeta creado
 };
 
+//-----------------------------------Historia usuario 2-----------------------------------
 // Historia de usuario 2: Creación de la función del filtro
 export const filtroPokemones = (data, propiedad) => {
   //La función toma dos argumentos: "data", que representa un objeto de datos que contiene información sobre los pokémones, y "propiedad", que es el tipo de pokémon que se desea filtrar
@@ -41,14 +40,16 @@ export const filtroPokemones = (data, propiedad) => {
   return result; // se retorna el array result que contiene los pokémones filtrados
 };
 
-//Historia de usuario 3 
-export const ordenarPokemones = (sortOrder) => { //sort order, el parametro que debe recibir
-  data.pokemon.sort(function (a, b) { //ordenar y haciendo una comparación
-    const lowerCatchRate = parseFloat(a.encounter["base-capture-rate"]); //declarando los valores que quiero utilizar para la función
-    const higherCatchRate = parseFloat(b.encounter["base-capture-rate"]);
+//-----------------------------------Historia usuario 3-----------------------------------
+export const ordenarPokemones = (dataPokemon, sortOrder) => { //dataPokemon, sortOrder, los parametros que debe recibir
+  dataPokemon.sort(function (a, b) { //ordenando y haciendo una comparación
+    const lowerCatchRate = a.encounter["base-capture-rate"]; //declarando los valores de la propiedad que utilizaremos para la función
+    //console.log('resultado 1', lowerCatchRate);
+    const higherCatchRate = b.encounter["base-capture-rate"];
+    //console.log('resultado 2', higherCatchRate);
     if (sortOrder === "lower-catch-rate") {
       if (lowerCatchRate < higherCatchRate) //filtro ascendente - si se selecciona de menor a mayor
-        return -1; // la función declarada devuelve
+        return -1; // la función devuelve
       if (lowerCatchRate > higherCatchRate) 
         return 1;
     } else if (sortOrder === "higher-catch-rate") {
@@ -59,33 +60,5 @@ export const ordenarPokemones = (sortOrder) => { //sort order, el parametro que 
     }
     return 0;
   });
-  console.log(data.pokemon);
+  //console.log(dataPokemon);
 };
-
-
-// ------------------------------------- Apuntes ----------------------------------------
-
-//PARA INVESTIGAR
-// por qué puedo poner ifs dentro de ifs??? cómo es el orden de una función, buscar en mis apuntes
-//por qué para el filtro de asc y desc debo hacerlo doble para cada uno? ->
-//para preguntar en dudas rápidas: ¿no entiendo por qué mi función de ordenar necesita dos condicionales cada uno para poder funcionar
-
-//PASOS
-//* sortData(data, sortBy, sortOrder): esta función sort u ordenar recibe tres parámetros.
-//1. El primer parámetro, data, nos entrega los datos.
-//2. El segundo parámetro, sortBy, nos dice con respecto a cuál de los campos de la data se quiere ordenar.
-//3. El tercer parámetro, sortOrder, indica si se quiere ordenar de manera ascendente o descendente.
-
-//primero debo poner el parametro que debe recibir
-
-//const baseCaptureRate = [0.2, 0.1, 0.05, 0.5, 0.25, 0.125, 0.3, 0.6, 0.15, 0.4, 0.7, 0.03, 0.06, 100, 0.02, 'not in capture'];
-//baseCaptureRate.sort();
-//console.log(baseCaptureRate);
-
-//if (0.02 < 'not in capture') {
-//return -1;
-//}
-//if (0.02 > 'not in capture') {
-//return 1;
-//}
-//})

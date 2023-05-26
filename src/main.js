@@ -6,7 +6,7 @@ const pokemones = data.pokemon;
 const contenedorPokemones = document.getElementById("contenedor_pokemones");
 const logoPokemon = document.getElementById("imagenLogoPokemon");
 
-//Historia de usuario 1
+//-----------------------------------Historia usuario 1-----------------------------------
 // Visualización de los pokemones con el método .forEach
 pokemones.forEach((pokemon) => {
   //se usa el metodo forEach para ir por cada pokemon y ejecutar la función que los muestra
@@ -18,7 +18,7 @@ pokemones.forEach((pokemon) => {
 });
 
 
-//Historia usuario 2
+//-----------------------------------Historia usuario 2-----------------------------------
 /*const pokemonesGrass = filtroPokemones(data, "grass");
 console.log(pokemonesGrass); esto nos sirve para comprobar que funciona el filtro*/
 
@@ -48,14 +48,15 @@ valoresLista.addEventListener("change", () => {
   }
 });
 
+//pokemones, valorSeleccionado
 
-//Historia de usuario 3
 
-//cómo hago para conectar esto con la función?
+//-----------------------------------Historia usuario 3-----------------------------------
+
 const ordenarValores = document.getElementById("lista-desplegable-ordenar");
 ordenarValores.addEventListener("change", () => {
   const valoresOrdenados = ordenarValores.value; //obteniendo el valor seleccionado .value
-  ordenarPokemones(valoresOrdenados); //llamada a la función ordenarPokemones
+  ordenarPokemones(pokemones, valoresOrdenados); //llamando la función ordenarPokemones, pasando como argumento pokemones (donde está la data) y donde se guardó el valor seleccionado
 
   if (valoresOrdenados === "lower-catch-rate" || valoresOrdenados === "higher-catch-rate") {
     contenedorPokemones.innerHTML = "";
@@ -66,8 +67,10 @@ ordenarValores.addEventListener("change", () => {
   }
 });
 
-//tengo que importar la función ordenarPokemones de data.js
-//ordenarPokemones => nombre de la función
+//la data está guardada en la constante pokemones
+//entregar la data directamente acá
+
+//solo se se va modificar cuando ocurra el evento
 
 
 // Refrescar la página al hacer clic en la imagen del logo
@@ -75,11 +78,4 @@ logoPokemon.addEventListener("click", () => {
   //al hacer click en el logo que trajimos arriba con la id se recarga la página
   location.reload(); //-reload se usa para recargar la página
 });
-
-
-////////////////////
-//TESTING
-// function init (){
-//export init;
-
 
