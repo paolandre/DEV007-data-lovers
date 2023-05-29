@@ -41,24 +41,25 @@ export const filtroPokemones = (data, propiedad) => {
 };
 
 //-----------------------------------Historia usuario 3-----------------------------------
-export const ordenarPokemones = (dataPokemon, sortOrder) => { //dataPokemon, sortOrder, los parametros que debe recibir
-  dataPokemon.sort(function (a, b) { //ordenando y haciendo una comparación
-    const lowerCatchRate = a.encounter["base-capture-rate"]; //declarando los valores de la propiedad que utilizaremos para la función
+export const ordenarPokemones = (dataPokemon, sortOrder) => { //dataPokemon y sortOrder son los parametros que debe recibir
+  dataPokemon.sort(function (a, b) { //empleando método .sort y haciendo una comparación (a,b)
+    const lowerCatchRate = a.encounter["base-capture-rate"]; //trayendo las propiedades que utilizaremos -> encounter: base-capture-rate
     //console.log('resultado 1', lowerCatchRate);
     const higherCatchRate = b.encounter["base-capture-rate"];
-    //console.log('resultado 2', higherCatchRate);
-    if (sortOrder === "lower-catch-rate") {
-      if (lowerCatchRate < higherCatchRate) //filtro ascendente - si se selecciona de menor a mayor
-        return -1; // la función devuelve
-      if (lowerCatchRate > higherCatchRate) 
-        return 1;
-    } else if (sortOrder === "higher-catch-rate") {
-      if (lowerCatchRate > higherCatchRate) //filtro descendente - si se selecciona de mayor a menor
+    //console.log('resultado 2', higherCatchRate); 
+    if (sortOrder === "from-lower-to-higher") {
+      if (lowerCatchRate > higherCatchRate) //filtro ascendente - si se selecciona de  menor a mayor probabilidad de captura
+        return -1; //-1 indica los últimos índices del array
+      if (lowerCatchRate < higherCatchRate)
+        return 1; //1 indica los primeros índices del array
+    } else if (sortOrder === "from-higher-to-lower") {
+      if (lowerCatchRate < higherCatchRate) //filtro descendente - si se selecciona de mayor a menor probabilidad de captura
         return -1;
-      if (lowerCatchRate < higherCatchRate) 
+      if (lowerCatchRate > higherCatchRate)
         return 1;
     }
     return 0;
   });
+  return dataPokemon; //se retorna el array ordenado
   //console.log(dataPokemon);
 };

@@ -58,7 +58,7 @@ ordenarValores.addEventListener("change", () => {
   const valoresOrdenados = ordenarValores.value; //obteniendo el valor seleccionado .value
   ordenarPokemones(pokemones, valoresOrdenados); //llamando la función ordenarPokemones, pasando como argumento pokemones (donde está la data) y donde se guardó el valor seleccionado
 
-  if (valoresOrdenados === "lower-catch-rate" || valoresOrdenados === "higher-catch-rate") {
+  if (valoresOrdenados === "from-lower-to-higher" || valoresOrdenados === "from-higher-to-lower") {
     contenedorPokemones.innerHTML = "";
     data.pokemon.forEach((pokemon) => { //recorriendo el arreglo original data.pokemon 
       const card = tarjetaPokemon(pokemon);
