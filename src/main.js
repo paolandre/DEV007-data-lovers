@@ -28,7 +28,7 @@ valoresLista.addEventListener("change", () => {
   //cuando se hace un cambio en la lista-desplegable-filtrar se ejecuta la función flecha
   const valorSeleccionado = valoresLista.value; // se obtiene el valor seleccionado .value
 
-  if (valorSeleccionado == "show-all") {
+  if (valorSeleccionado === "show-all") {
     // si se selecciona el valor de show-all se ejecuta el metodo de forEach para mostrar todas las tarjetas con todos los pokemones
     contenedorPokemones.innerHTML = "";
     pokemones.forEach((pokemon) => {
@@ -53,4 +53,4 @@ logoPokemon.addEventListener("click", () => {
   location.reload(); //-reload se usa para recargar la página
 });
 
-//Yo trabajo hasta aquí
+
