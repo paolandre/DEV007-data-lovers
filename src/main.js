@@ -1,4 +1,4 @@
-import { filtroPokemones } from "./data.js";
+import { filtroPokemones, tarjetaPokemon, ordenarPokemones } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 //Declaramos variables que vamos a usar
@@ -77,3 +77,22 @@ valoresLista.addEventListener("change", () => {
     });
   }
 });
+
+//----------------------------------- HISTORIA DE USUARIO 3: Filtro de ordenamiento
+
+const ordenarValores = document.getElementById("lista-desplegable-ordenar");
+ordenarValores.addEventListener("change", () => {
+  const valoresOrdenados = ordenarValores.value; //obteniendo el valor seleccionado .value
+  ordenarPokemones(pokemones, valoresOrdenados); //llamando la función ordenarPokemones, pasando como argumento pokemones (donde está la data) y donde se guardó el valor seleccionado
+
+  if (valoresOrdenados === "from-lower-to-higher" || valoresOrdenados === "from-higher-to-lower") {
+    contenedorPokemones.innerHTML = "";
+    data.pokemon.forEach((pokemon) => { //recorriendo el arreglo original data.pokemon 
+      const card = tarjetaPokemon(pokemon);
+      contenedorPokemones.appendChild(card);
+    });
+  }
+});
+
+
+
