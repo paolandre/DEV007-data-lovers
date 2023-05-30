@@ -1,4 +1,4 @@
-import { filtroPokemones, tarjetaPokemon, ordenarPokemones } from "./data.js";
+import { filtroPokemones, ordenarPokemones } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 //Declaramos variables que vamos a usar
