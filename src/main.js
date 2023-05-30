@@ -6,7 +6,39 @@ const pokemones = data.pokemon;
 const contenedorPokemones = document.getElementById("contenedor_pokemones");
 const logoPokemon = document.getElementById("imagenLogoPokemon");
 
-//-----------------------------------Historia usuario 1-----------------------------------
+// Refrescar la página al hacer clic en la imagen del logo
+logoPokemon.addEventListener("click", () => {
+  //al hacer click en el logo que trajimos arriba con la id se recarga la página
+  location.reload(); //-reload se usa para recargar la página
+});
+
+// --------------------------- HISTORIA DE USUARIO 1 : Creación de la función de la tarjeta de pokemones para reusarla después
+const tarjetaPokemon = (pokemon) => {
+  //se extraen las propiedades del objeto pokemon con la función flecha
+  const img = pokemon.img;
+  const name = pokemon.name;
+  const height = pokemon.size.height;
+  const weight = pokemon.size.weight;
+  const type = pokemon.type.join(", "); // .join sirve para poner elementos entre los elementos del array
+  const baseCaptureRate = pokemon.encounter["base-capture-rate"]; // también se puede acceder a una propiedad específica dentro del objeto mediante los []. La notación de corchetes es útil cuando el nombre de la propiedad es dinámico o cuando contiene caracteres especiales, como espacios o guiones.
+
+  const card = document.createElement("div"); //.createElement sirve para crear un div que contiene la tarjeta del pokémon.
+  card.className = "pokemon-card"; //Se asigna la clase "pokemon-card" al elemento de la tarjeta para modificar en CSS
+  card.innerHTML = ` 
+    <img src="${img}" alt="${name}">
+    <h3>${name}</h3> 
+    <div class="cardp">
+        <p>Height: ${height}</p>
+        <p>Weight: ${weight}</p>
+        <p>Base Capture Rate: ${baseCaptureRate}</p>
+        <p class= "type">Type: ${type}</p>
+    </div>
+  `;
+  //Establecemos el contenido de la tarjeta con .innerHTML
+  //los ${template string} permiten que se inserte el valor original dela propiedad
+  return card; //Aquí retornamos el elemento de la tarjeta creado
+};
+
 // Visualización de los pokemones con el método .forEach
 pokemones.forEach((pokemon) => {
   //se usa el metodo forEach para ir por cada pokemon y ejecutar la función que los muestra
@@ -17,10 +49,8 @@ pokemones.forEach((pokemon) => {
   //la tarjeta creada la traemos de data.js
 });
 
-
-//-----------------------------------Historia usuario 2-----------------------------------
-/*const pokemonesGrass = filtroPokemones(data, "grass");
-console.log(pokemonesGrass); esto nos sirve para comprobar que funciona el filtro*/
+// --------------------------- HISTORIA DE USUARIO 2: Filtro de pokemones
+/*const pokemonesGrass = filtroPokemones(data, "grass"); console.log(pokemonesGrass); esto nos sirve para comprobar que funciona el filtro*/
 
 const valoresLista = document.getElementById("lista-desplegable-filtrar");
 //los valores son los tipos de pokemon y se toman de la lista desplegable de html
@@ -48,10 +78,7 @@ valoresLista.addEventListener("change", () => {
   }
 });
 
-//pokemones, valorSeleccionado
-
-
-//-----------------------------------Historia usuario 3-----------------------------------
+//----------------------------------- HISTORIA DE USUARIO 3: Filtro de ordenamiento
 
 const ordenarValores = document.getElementById("lista-desplegable-ordenar");
 ordenarValores.addEventListener("change", () => {
@@ -67,15 +94,5 @@ ordenarValores.addEventListener("change", () => {
   }
 });
 
-//la data está guardada en la constante pokemones
-//entregar la data directamente acá
 
-//solo se se va modificar cuando ocurra el evento
-
-
-// Refrescar la página al hacer clic en la imagen del logo
-logoPokemon.addEventListener("click", () => {
-  //al hacer click en el logo que trajimos arriba con la id se recarga la página
-  location.reload(); //-reload se usa para recargar la página
-});
 

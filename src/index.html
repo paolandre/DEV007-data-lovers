@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <link rel="shortcut icon" href="#">
-  <meta charset="utf-8">
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <!-- Titulo -->
+    <header>
+      <div class="container_titulo">
+        <img
+          id="imagenLogoPokemon"
+          class="logoPokemon"
+          src="Logo de pokemon.png"
+          alt="Logo Pokémon"
+        />
+      </div>
+    </header>
 
-<body>
-  <!-- Titulo -->
-  <header>
-    <div class="container_titulo">
-      <img id="imagenLogoPokemon" class="logoPokemon" src="Logo de pokemon.png" alt="Logo Pokémon">
-    </div>
-  </header>
+    <!-- Encabezado principal -->
+    <section>
+      <p class="principal_parrafo" id="principal_parrafo">
+        Welcome to this page, where you can find information on 251 different
+        Pokémon along with some basic details. You have the option to filter
+        them by their type and sort them in ascending or descending order based
+        on the probability of capturing them. Additionally, you can easily
+        calculate the average weight and height of each Pokémon on this page.
+      </p>
+    </section>
 
-  <!-- Encabezado principal -->
-  <section>
-    <p class="principal_parrafo" id="principal_parrafo"> Welcome to this page, where you can find information on 251
-      different Pokémon along with some basic details. You
-      have the option to filter them by their type and sort them in ascending or descending order based on the
-      probability of capturing them. Additionally, you can easily calculate the average weight and height of each
-      Pokémon on this page.</p>
-  </section>
+    <!-- Contenedor de botones -->
+    <div class="container_botones_principal" id="container_botones_principal">
+      <!-- --------------------------- HISTORIA DE USUARIO 2 (filtro)--------------------------- -->
+      <select
+        id="lista-desplegable-filtrar"
+        style="display: block"
+        class="boton"
+      >
+        <option>Filter</option>
+        <option value="show-all">All Types</option>
+        <option value="normal">Normal</option>
+        <option value="fire">Fire</option>
+        <option value="water">Water</option>
+        <option value="grass">Grass</option>
+        <option value="electric">Electric</option>
+        <option value="ice">Ice</option>
+        <option value="fighting">Fighting</option>
+        <option value="poison">Poison</option>
+        <option value="ground">Ground</option>
+        <option value="flying">Flying</option>
+        <option value="psychic">Psychic</option>
+        <option value="bug">Bug</option>
+        <option value="rock">Rock</option>
+        <option value="ghost">Ghost</option>
+        <option value="dragon">Dragon</option>
+        <option value="dark">Dark</option>
+        <option value="steel">Steel</option>
+        <option value="fairy">Fairy</option>
+      </select>
 
-  <!-- Contenedor de botones -->
-  <div class="container_botones_principal">
-
-    <!-- Historia de usuario 2 (filtro)-->
-    <select id="lista-desplegable-filtrar" style="display: block;" class="boton">
-      <option>Filter</option>
-      <option value= "show-all">All Types</option>
-      <option value="normal">Normal</option>
-      <option value="fire">Fire</option>
-      <option value="water">Water</option>
-      <option value="grass">Grass</option>
-      <option value="electric">Electric</option>
-      <option value="ice">Ice</option>
-      <option value="fighting">Fighting</option>
-      <option value="poison">Poison</option>
-      <option value="ground">Ground</option>
-      <option value="flying">Flying</option>
-      <option value="psychic">Psychic</option>
-      <option value="bug">Bug</option>
-      <option value="rock">Rock</option>
-      <option value="ghost">Ghost</option>
-      <option value="dragon">Dragon</option>
-      <option value="dark">Dark</option>
-      <option value="steel">Steel</option>
-      <option value="fairy">Fairy</option>
-    </select>
-
-    <!-- Historia de usuario 3 (ordenar) -->
+     <!-- --------------------------- HISTORIA DE USUARIO 3 (ordenamiento)--------------------------- -->
   <select id="lista-desplegable-ordenar" style="display: block;" class="boton">
     <option>Order</option>
     <option value="from-lower-to-higher">From lower to higher catch rate</option>
     <option value="from-higher-to-lower">From higher to lower catch rate</option>
   </select>
 
-    <!-- Historia de usuario 1 (contenedor de pokemones) -->
+    <!-- --------------------------- HISTORIA DE USUARIO 1 (visualización)--------------------------- -->
     <div id="contenedor_pokemones" class="contenedor_pokemones"></div>
 
-  </div>
-
-  <script src="main.js" type="module"></script>
-</body>
-
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
-
-
-
