@@ -66,49 +66,51 @@ describe("filtroPokemones", () => {
 
 //-----------------------------------Test función ordenar
 //Data ficticia simulando la data real
-const dataPokemon = [ 
+const dataPokemon = [
   {
-    "name": "bulbasaur",
-    "encounter": {
-      "base-capture-rate": "0.2"
-    }
+    name: "bulbasaur",
+    encounter: {
+      "base-capture-rate": "0.2",
+    },
   },
   {
-    "name": "charmeleon",
-    "encounter": {
-      "base-capture-rate": "0.1"
-    }
+    name: "charmeleon",
+    encounter: {
+      "base-capture-rate": "0.1",
+    },
   },
   {
-    "name": "blastoise",
-    "encounter": {
-      "base-capture-rate": "0.05"
-    }
+    name: "blastoise",
+    encounter: {
+      "base-capture-rate": "0.05",
+    },
   },
   {
-    "name": "pichu",
-    "encounter": {
-      "base-capture-rate": "not in capture"
-    }
+    name: "pichu",
+    encounter: {
+      "base-capture-rate": "not in capture",
+    },
   },
-]
+];
 
 const asc = [
-  { "name": "pichu", "encounter": { "base-capture-rate": "not in capture" } },
-  { "name": "bulbasaur", "encounter": { "base-capture-rate": "0.2" } },
-  { "name": "charmeleon", "encounter": { "base-capture-rate": "0.1" } },
-  { "name": "blastoise", "encounter": { "base-capture-rate": "0.05" } },
-]
+  { name: "pichu", encounter: { "base-capture-rate": "not in capture" } },
+  { name: "bulbasaur", encounter: { "base-capture-rate": "0.2" } },
+  { name: "charmeleon", encounter: { "base-capture-rate": "0.1" } },
+  { name: "blastoise", encounter: { "base-capture-rate": "0.05" } },
+];
 
 const desc = [
-  { "name": "blastoise", "encounter": { "base-capture-rate": "0.05" } },
-  { "name": "charmeleon", "encounter": { "base-capture-rate": "0.1" } },
-  { "name": "bulbasaur", "encounter": { "base-capture-rate": "0.2" } },
-  { "name": "pichu", "encounter": { "base-capture-rate": "not in capture" } },
-]
+  { name: "blastoise", encounter: { "base-capture-rate": "0.05" } },
+  { name: "charmeleon", encounter: { "base-capture-rate": "0.1" } },
+  { name: "bulbasaur", encounter: { "base-capture-rate": "0.2" } },
+  { name: "pichu", encounter: { "base-capture-rate": "not in capture" } },
+];
 
-describe("ordenarPokemones", () => { //nombre de la función
-  it("debería ser una función", () => { //descripción de la función
+describe("ordenarPokemones", () => {
+  //nombre de la función
+  it("debería ser una función", () => {
+    //descripción de la función
     expect(typeof ordenarPokemones).toBe("function");
   });
 
