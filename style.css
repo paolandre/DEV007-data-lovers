@@ -1,0 +1,145 @@
+body {
+  background-color: #1a2234;
+  font-family: sans-serif;
+}
+
+.container_titulo {
+  text-align: center;
+  padding: 20px;
+}
+
+.logoPokemon {
+  width: 266px;
+  height: 93px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.principal_parrafo {
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: white;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.container_botones_principal {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+
+button {
+  background-color: #fffc0f;
+  color: #1a2234;
+  border: hidden;
+  border-radius: 10px;
+  padding: 5px 30px;
+  font-weight: bold;
+  height: 32px;
+  width: 170px;
+  font-size: 16px;
+  box-shadow: 0px 0px 10px #0d0e0e;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4776fa;
+}
+
+select {
+  /*lista desplegable*/
+  background-color: #fffc0f;
+  text-align: center;
+  color: #1a2234;
+  border: hidden;
+  border-radius: 10px;
+  font-weight: bold;
+  height: 32px;
+  width: 260px;
+  font-size: 16px;
+  box-shadow: 0px 0px 10px #0d0e0e;
+  cursor: pointer;
+
+  /* Para quitar la flecha de la lista*/
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: none;
+}
+
+/* Para quitar la primera opción de la lista desplegable (select)*/
+select option:first-child {
+  display: none;
+}
+
+select option {
+  /* Para cambiar el color de la lista desplegable*/
+  background-color: #f0ee8b;
+  box-shadow: 0px 0px 10px #0d0e0e;
+}
+
+/*--------------------------- HISTORIA DE USUARIO 1 (visualización)---------------------------*/
+/* Tarjeta de cada Pokemon*/
+.pokemon-card {
+  width: 252px;
+  height: 250px;
+  background-color: #354058;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding-bottom: 50px;
+  box-shadow: 0px 0px 10px #0d0e0e;
+}
+
+.pokemon-card:hover {
+  box-shadow: 0 4rem 4rem rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+.pokemon-card img {
+  width: 150px;
+  height: 150px;
+  padding-top: 40px;
+}
+
+.pokemon-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pokemon-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  width: 100%;
+}
+
+.cardp {
+  background-color: #283248;
+  padding: 25px;
+  padding-right: 100px;
+  border-radius: 10px;
+}
+
+/*Contenedor de pokemones*/
+.contenedor_pokemones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color: white;
+  padding: 30px;
+}
+
+/*--------------------------- HISTORIA DE USUARIO 2 (filtro)---------------------------*/
+.boton:hover {
+  background-color: #4776fa;
+}
