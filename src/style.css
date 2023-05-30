@@ -12,6 +12,7 @@ body {
   width: 266px;
   height: 93px;
   text-align: center;
+  cursor: pointer;
 }
 
 .principal_parrafo {
@@ -42,6 +43,7 @@ button {
   width: 170px;
   font-size: 16px;
   box-shadow: 0px 0px 10px #0d0e0e;
+  cursor: pointer;
 }
 
 button:hover {
@@ -60,6 +62,7 @@ select {
   width: 170px;
   font-size: 16px;
   box-shadow: 0px 0px 10px #0d0e0e;
+  cursor: pointer;
 
   /* Para quitar la flecha de la lista*/
   -moz-appearance: none;
@@ -78,15 +81,8 @@ select option {
   box-shadow: 0px 0px 10px #0d0e0e;
 }
 
-.contenedor_pokemones {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  color: white;
-  padding: 30px;
-}
-
-/*Historia de usuario 1*/
+/*--------------------------- HISTORIA DE USUARIO 1 (visualización)---------------------------*/
+/* Tarjeta de cada Pokemon*/
 .pokemon-card {
   width: 252px;
   height: 250px;
@@ -105,7 +101,7 @@ select option {
 }
 
 .pokemon-card:hover {
-  box-shadow: 0 4rem 4rem rgba(0.5, 0.5, 0.5, 0.5)
+  box-shadow: 0 4rem 4rem rgba(0.5, 0.5, 0.5, 0.5);
 }
 
 .pokemon-card img {
@@ -134,7 +130,16 @@ select option {
   border-radius: 10px;
 }
 
-/*Historia de usuario 2*/
+/*Contenedor de pokemones*/
+.contenedor_pokemones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color: white;
+  padding: 30px;
+}
+
+/*--------------------------- HISTORIA DE USUARIO 2 (filtro)---------------------------*/
 .boton:hover {
   background-color: #4776fa;
 }

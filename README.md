@@ -2,14 +2,30 @@
 
 ## Índice
 
-* [1. Encuestas](#1-encuestas)
-* [2. Historias de usuario](#2-historias-de-usuario)
-* [3. Prototipos de baja fidelidad](#2-prototipos-de-baja-fidelidad)
-* [4. Prototipos de alta fidelidad](#2-prototipos-de-alta-fidelidad)
+* [1. Descripción](#1-descripción)
+* [2. Implementación del proyecto](#2-implementación-del-proyecto)
+* [3. Encuestas](#3-encuestas)
+* [4. Historias de usuario](#4-historias-de-usuario)
+* [5. Prototipos de baja fidelidad](#5-prototipos-de-baja-fidelidad)
+* [6. Prototipos de alta fidelidad](#6-prototipos-de-alta-fidelidad)
+* [7. Test de usabilidad](#7-test-de-usabilidad)
 
 ***
+## 1. Descripción
 
-## 1. Encuestas
+Se trata de una interfaz que permite visualizar una lista de 251 pokémones de la región Kanto y Johto, filtrar por su tipo de poder y ordenar de menor a mayor probabilidad de captura (y viceversa), además incluye una imagen de cada pokémon y la altura y peso de cada uno.
+
+El objetivo de la plataforma es ayudar tanto a los usuarios jugadores de Pokemon GO, como quienes quieren conocer un poco del mundo Pokémon a conocer la data más relevante que se necesita conocer sobre cada pokémon.
+
+## 2. Implementación del proyecto
+
+Este proyecto utiliza los métodos .filter para filtrar los pokémones y .sort para ordenarlos. 
+
+Inicialmente el usuario puede visualizar la lista de pokémones, luego tiene la posibilidad de seleccionar el botón para filtrar, desde el cual se despliega una lista con cada tipo de poder. El segundo botón permite ordenar, el usuario puede escoger entre dos opciones. 
+
+Se ha realizado una investigación de usuario a través de una encuesta para conocer sus preferencias y necesidades. A partir de allí se construyeron las historias de usuario.
+
+## 3. Encuestas
 
 Para el desarrollo del proyecto, creamos cuatro historias de usuario que implementamos teniendo en cuenta una encuesta que realizamos utilizando la herramienta de Google para crear formularios. 
 
@@ -24,7 +40,7 @@ Las preguntas que les hicimos a los usuarios fueron:
 
 Aquí hay algunas capturas de pantalla de nuestra encuesta: 
 
-## 2. Historias de usuario
+## 4. Historias de usuario
 
 Los resultados de la encuesta nos dieron como resultado estas cuatro historias de usuario: 
 
@@ -84,14 +100,19 @@ Definición de terminado
 [ ] Todo el código está subido a la rama principal de repositorio.
 [ ] Hemos publicado la historia a una página de GitHub pages.
 
-## 3. Prototipos de baja fidelidad
+## 5. Prototipos de baja fidelidad
 
 Creamos los prototipos de baja fidelidad usando lápiz y papel. Aquí están las fotos: 
 
 
-## 4. Prototipos de alta fidelidad
-Creamos los prototipos de alta fidelidad usando Figma. Aquí están algunos pantallazos: 
+## 6. Prototipos de alta fidelidad
+Creamos los prototipos de alta fidelidad usando Figma. 
 
 Aquí está el link para acceder a la vista del prototipo en Figma: 
 https://www.figma.com/file/U0KPK97klYB7pwpgWTGtoS/Prototipo-data-lovers?type=design&node-id=0%3A1&t=iIlefLPmZNn4a50R-1
 
+Aquí están algunas capturas de pantalla: 
+
+## 7. Test de usabilidad
+
+En la realización del proyecto hubo un cambio en el diseño inicial con relación al prototipo de alta fidelidad, porque cuando creamos la página nos dimos cuenta que para el usuario sería más sencillo y directo seleccionar el filtro y el ordenamiento en una lista desplegable en lugar de botones, lo cual implicaría dar más clicks. 
