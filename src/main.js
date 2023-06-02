@@ -13,7 +13,7 @@ logoPokemon.addEventListener("click", () => {
 });
 
 // --------------------------- HISTORIA DE USUARIO 1 : Creación de la función de la tarjeta de pokemones para reusarla después
-const tarjetaPokemon = (pokemon) => {
+const tarjetaPokemon = (pokemon) => { //se usa pokemon y no pokemones porque tenemos que entrar al objeto para obtener estos valores
   //se extraen las propiedades del objeto pokemon con la función flecha
   const img = pokemon.img;
   const name = pokemon.name;
@@ -39,14 +39,16 @@ const tarjetaPokemon = (pokemon) => {
   return card; //Aquí retornamos el elemento de la tarjeta creado
 };
 
-// Visualización de los pokemones con el método .forEach
+// Visualización de los pokemones con el método .forEach (con .map funciona igual sin necesidad de añadir el return)
+
 pokemones.forEach((pokemon) => {
-  //se usa el metodo forEach para ir por cada pokemon y ejecutar la función que los muestra
+  //se usa el metodo forEach para ir por cada pokemon y ejecutar la función que muestra cada uno ordenado en la tarjeta que creamos con la funcion anterior
   const card = tarjetaPokemon(pokemon);
   contenedorPokemones.appendChild(card);
   //appendChild se usa para mostrar la tarjeta en el html (contenedor_pokemones)
   //el forEach hace que el proceso de crear una tarjeta se repita con cada pokemon
   //la tarjeta creada la traemos de data.js
+  //Funciona con o sin return
 });
 
 // --------------------------- HISTORIA DE USUARIO 2: Filtro de pokemones
@@ -81,17 +83,19 @@ valoresLista.addEventListener("change", () => {
 //----------------------------------- HISTORIA DE USUARIO 3: Filtro de ordenamiento
 
 const ordenarValores = document.getElementById("lista-desplegable-ordenar");
+
 ordenarValores.addEventListener("change", () => {
+
   const valoresOrdenados = ordenarValores.value; //obteniendo el valor seleccionado .value
   ordenarPokemones(pokemones, valoresOrdenados); //llamando la función ordenarPokemones, pasando como argumento pokemones (donde está la data) y donde se guardó el valor seleccionado
 
   if (valoresOrdenados === "from-lower-to-higher" || valoresOrdenados === "from-higher-to-lower") {
-    contenedorPokemones.innerHTML = "";
+    contenedorPokemones.innerHTML = ""; //|| es o
     data.pokemon.forEach((pokemon) => { //recorriendo el arreglo original data.pokemon 
       const card = tarjetaPokemon(pokemon);
       contenedorPokemones.appendChild(card);
     });
-  }
+  } //si la condicion del if se cumple, se ejecuta el despliegue de la tarjeta
 });
 
 

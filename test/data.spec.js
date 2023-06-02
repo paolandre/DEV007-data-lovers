@@ -93,14 +93,14 @@ const dataPokemon = [
   },
 ];
 
-const asc = [
+const asc = [ //de menor a mayor
   { name: "pichu", encounter: { "base-capture-rate": "not in capture" } },
   { name: "bulbasaur", encounter: { "base-capture-rate": "0.2" } },
   { name: "charmeleon", encounter: { "base-capture-rate": "0.1" } },
   { name: "blastoise", encounter: { "base-capture-rate": "0.05" } },
 ];
 
-const desc = [
+const desc = [ //de mayor a menor
   { name: "blastoise", encounter: { "base-capture-rate": "0.05" } },
   { name: "charmeleon", encounter: { "base-capture-rate": "0.1" } },
   { name: "bulbasaur", encounter: { "base-capture-rate": "0.2" } },

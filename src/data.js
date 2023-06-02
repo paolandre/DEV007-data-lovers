@@ -13,24 +13,37 @@ export const filtroPokemones = (data, propiedad) => {
 };
 
 //----------------------------------- HISTORIA DE USUARIO 3: Creación de la función de ordenamiento
-export const ordenarPokemones = (dataPokemon, sortOrder) => { //dataPokemon y sortOrder son los parametros que debe recibir
-  dataPokemon.sort(function (a, b) { //empleando método .sort y haciendo una comparación (a,b)
-    const lowerCatchRate = a.encounter["base-capture-rate"]; //trayendo las propiedades que utilizaremos -> encounter: base-capture-rate
-    //console.log('resultado 1', lowerCatchRate);
-    const higherCatchRate = b.encounter["base-capture-rate"];
-    //console.log('resultado 2', higherCatchRate); 
+export const ordenarPokemones = (dataPokemon, sortOrder) => { 
+  //dataPokemon son los pokemones y sortOrder es el tipo de ordenamiento que se desea aplicar
+  // sortOrder Representa la opción de ordenamiento seleccionada por el usuario.
+  dataPokemon.sort(function (pokemonA, pokemonB) { 
+    //Cuando se llama al método .sort() en un arreglo, se proporciona una función de comparación como argumento para determinar el orden de los elementos. 
+    //Esta función de comparación toma dos elementos del arreglo y los compara entre sí.
+
+    const lowerCatchRate = pokemonA.encounter["base-capture-rate"]; //trayendo las propiedades que utilizaremos -> encounter: base-capture-rate
+    //probabilidad de captura más baja en comparación 
+    const higherCatchRate = pokemonB.encounter["base-capture-rate"];
+    //probabilidad de captura más alta en comparación 
+
     if (sortOrder === "from-lower-to-higher") {
-      if (lowerCatchRate > higherCatchRate) //filtro ascendente - si se selecciona de  menor a mayor probabilidad de captura
-        return -1; //-1 indica los últimos índices del array
-      if (lowerCatchRate < higherCatchRate)
-        return 1; //1 indica los primeros índices del array
+      //si el valor seleccionado por el usuario es "from-lower-to-higher se ejecutan los siguientes 
+      //condicionales para organizar los pokemones en comparación con cada uno en orden ascendente
+      //de menor a mayor
+      if (lowerCatchRate > higherCatchRate) //mayor que
+        return -1;
+      if (lowerCatchRate < higherCatchRate) //menor que
+        return 1; 
+
     } else if (sortOrder === "from-higher-to-lower") {
-      if (lowerCatchRate < higherCatchRate) //filtro descendente - si se selecciona de mayor a menor probabilidad de captura
+      //si el valor seleccionado por el usuario es "from-higher-to-lower se ejecutan los siguientes 
+      //condicionales para organizar los pokemones en comparación con cada uno en orden descendente
+      //de mayor a menor
+      if (lowerCatchRate < higherCatchRate) 
         return -1;
       if (lowerCatchRate > higherCatchRate)
         return 1;
     }
-    return 0;
+    return 0; //si no hay selección se retorna 0
   });
   return dataPokemon; //se retorna el array ordenado
   //console.log(dataPokemon);
